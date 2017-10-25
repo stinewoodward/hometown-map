@@ -4,12 +4,13 @@
 <head>
 	<meta charset=utf-8 />
 	<title>Web Page Template</title>
+	<!-- Still no customize title for your page? You're dissin' the Spudders-->
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<!--<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> Remove resources that are not used in document to help it download faster. -->
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
@@ -35,7 +36,7 @@
 			margin: 20px auto;
 			font-family: 'Arvo', serif;
 			letter-spacing: .04em;
-            font-size: 2em; 
+            font-size: 2em;
 		}
 
         /*add font size to h2 element*/
@@ -117,7 +118,7 @@
 			subdomains: 'abcd',
 			maxZoom: 19
 		}).addTo(map);*/
-        
+
         //New Map Tiles
         var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
 	           attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
