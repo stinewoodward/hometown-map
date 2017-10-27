@@ -145,14 +145,16 @@
         var location2Name = "Abrams Park";
         var location2Lat = 45.8177;
         var location2Lon = -122.7365;
-        var location2Details = "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. They have a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.";
+        var location2Details = "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.";
         
+        //Buckets popup
         var location1Popup = "<b>" + location1Name + "</b><br>" +
         "<b>Details</b>: " + location1Details;
 
         L.marker([location1Lat, location1Lon]).addTo(map)
         .bindPopup(location1Popup);
         
+        //Abrams Park popup
         var location2Popup = "<b>" + location2Name + "</b><br>" +
         "<b>Details</b>: " + location2Details;
 
