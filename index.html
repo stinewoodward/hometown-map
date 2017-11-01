@@ -22,7 +22,7 @@
 		}
 
 		section {
-			width: 80%; /* Consider making this a relative unit so that the content adpats to the width of the screen. Try 80% */
+			width: 80%;
 			margin: 20px auto;
 		}
 
@@ -63,7 +63,7 @@
 			margin: 10px 0
 		}
 		#map {
-			width: 100%;  /* If you change the section width to relative unit you should make this width 100%. */
+			width: 100%;
 			height: 540px;
 			margin: 10px auto;
 			border: 2px solid #d3d3d3;
@@ -132,21 +132,17 @@
 			.addTo(map)
 			.openTooltip();
 
-				// You can add HTML elements inside variables. Just make sure the inner quotes don't match the string variable declaration quotes, e.g., "A 'property' inside a variable."
-
-				var location1img = "<img src='graphics/buckets.jpg' width='240px'>" // add img element into a variable
-
         //Buckets variables
         var location1Name = "Buckets";
         var location1Lat = 45.8148;
         var location1Lon = -122.7461;
-        var location1Details = "Buckets is a restaurant started by my cousin Dawn's husband, Stuart, after he got sick of grading papers as a high school English teacher. The concept of the restaurant is that everything they serve - soup, salad, barbeque - can be served in a bucket-shaped container.";
+        var location1Details = "Buckets is a restaurant started by my cousin Dawn's husband, Stuart, after he got sick of grading papers as a high school English teacher. The concept of the restaurant is that everything they serve - soup, salad, barbeque - can be served in a bucket-shaped container.<p><img src='graphics/buckets.jpg' width='100%'></p>";
 
         //Abrams Park variables
         var location2Name = "Abrams Park";
         var location2Lat = 45.8177;
         var location2Lon = -122.7365;
-        var location2Details = "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.";
+        var location2Details = "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.<p><img src='graphics/abrams-park.jpg' width='100%'></p>";
 
         //Buckets popup
         var location1Popup = "<b>" + location1Name + "</b><br>" +
