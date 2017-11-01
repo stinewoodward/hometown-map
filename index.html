@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<!-- Again, good job keeping your document organized and managing comments -->
 <head>
 	<meta charset=utf-8 />
 	<title>Ridgefield, WA: Home of the Spudders</title>
@@ -23,7 +23,7 @@
 		}
 
 		section {
-			width: 960px;
+			width: 960px; /* Consider making this a relative unit so that the content adpats to the width of the screen. Try 80% */
 			margin: 20px auto;
 		}
 
@@ -66,7 +66,7 @@
 			margin: 10px 0
 		}
 		#map {
-			width: 960px;
+			width: 960px;  /* If you change the section width to relative unit you should make this width 100%. */
 			height: 540px;
 			margin: 10px auto;
 			border: 2px solid #d3d3d3;
@@ -76,12 +76,12 @@
 
 <body>
 <!--add section elements to h1 and div-->
-    
+
     <section>
 	   <h1>Ridgefield, Washington: Home of the Spudders</h1>
     </section>
     <section>
-	   <div id='map'></div> 
+	   <div id='map'></div>
     </section>
 	<section>
 		<h2>Come visit Christine's hometown, Ridgefield.</h2>
@@ -134,26 +134,30 @@
 			.bindTooltip(message)
 			.addTo(map)
 			.openTooltip();
-        
+
+				// You can add HTML elements inside variables. Just make sure the inner quotes don't match the string variable declaration quotes, e.g., "A 'property' inside a variable."
+
+				var location1img = "<img src='graphics/buckets.jpg' width='240px'>" // add img element into a variable
+
         //Buckets variables
         var location1Name = "Buckets";
         var location1Lat = 45.8148;
         var location1Lon = -122.7461;
         var location1Details = "Buckets is a restaurant started by my cousin Dawn's husband, Stuart, after he got sick of grading papers as a high school English teacher. The concept of the restaurant is that everything they serve - soup, salad, barbeque - can be served in a bucket-shaped container.";
-    
+
         //Abrams Park variables
         var location2Name = "Abrams Park";
         var location2Lat = 45.8177;
         var location2Lon = -122.7365;
         var location2Details = "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.";
-        
+
         //Buckets popup
         var location1Popup = "<b>" + location1Name + "</b><br>" +
         "<b>Details</b>: " + location1Details;
 
         L.marker([location1Lat, location1Lon]).addTo(map)
         .bindPopup(location1Popup);
-        
+
         //Abrams Park popup
         var location2Popup = "<b>" + location2Name + "</b><br>" +
         "<b>Details</b>: " + location2Details;
