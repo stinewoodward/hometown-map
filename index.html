@@ -135,7 +135,7 @@
         //variable to store location names
         var nameLocation = ["Buckets", "Abrams Park"];
         
-        //variable to store lat and long of locations
+        //2-D variable to store lat and long
         var coordinateLocation = [
             [45.8148,-122.7461],
             [45.8177,-122.7365]
@@ -145,8 +145,7 @@
         var detailsLocation = ["Buckets is a restaurant started by my cousin Dawn's husband, Stuart, after he got sick of grading papers as a high school English teacher. The concept of the restaurant is that everything they serve - soup, salad, barbeque - can be served in a bucket-shaped container.<br><img src='graphics/buckets.jpg' width='100%'>", "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.<br><img src='graphics/abrams-park.jpg' width='100%'>"];
         
         
-        // Hint for location marker code block inside for loop
-
+        // For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {
             var locationPopup = "<b>" + nameLocation[i] + "</b><br>" +
             "<b>Details</b>: " + detailsLocation[i];
@@ -154,9 +153,6 @@
             L.marker(coordinateLocation[i]).addTo(map)
             .bindPopup(locationPopup);
         }
-        
-
-        
 
 
        /* //Buckets variables
