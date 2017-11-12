@@ -133,7 +133,21 @@
 			.openTooltip();
         
         //variable to store location names
-        var nameLocation = ["Buckets", "Abrams Park"];
+        var nameLocation = [
+            "Buckets", 
+            "Abrams Park"
+        ];
+        
+        var typeLocation = [
+            "Restaurant",
+            "Park"
+        ];
+        
+        var typeIconURL = [
+            "icons/restaurant-15.svg",
+            "icons/park-15.svg"
+        ];
+        
         
         //2-D variable to store lat and long
         var coordinateLocation = [
@@ -150,9 +164,28 @@
             var locationPopup = "<b>" + nameLocation[i] + "</b><br>" +
             "<b>Details</b>: " + detailsLocation[i];
             
-            L.marker(coordinateLocation[i]).addTo(map)
+            var iconLocation = createIcon(typeLocation[i]);
+            
+            L.marker(coordinateLocation[i], {
+                icon: iconLocation
+            }) 
+            .addTo(map)
             .bindPopup(locationPopup);
-        }
+        };
+        
+        /******* Functions below here *******/
+        
+        function createIcon(typeFacility) {
+            
+            var iconURL,
+                iconSize = 30;
+            
+            if (typeFacility == "Restaurant") {
+                iconURL = typeIconURL[0];
+            } else {
+                iconURL = typeIconURL[1];
+            }
+        };
 
 
        /* //Buckets variables
