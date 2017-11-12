@@ -164,8 +164,10 @@
             var locationPopup = "<b>" + nameLocation[i] + "</b><br>" +
             "<b>Details</b>: " + detailsLocation[i];
             
+            //create icon variable
             var iconLocation = createIcon(typeLocation[i]);
             
+            //create marker, add to map, bind popups
             L.marker(coordinateLocation[i], {
                 icon: iconLocation
             }) 
@@ -175,6 +177,7 @@
         
         /******* Functions below here *******/
         
+        //function to assign icons
         function createIcon(typeFacility) {
             
             var iconURL,
@@ -185,7 +188,19 @@
             } else {
                 iconURL = typeIconURL[1];
             }
+            
+            //create leaflet icon object
+            var result = L.icon({
+                iconURL: iconURL,
+                iconSize: iconSize,
+                popupAnchor: [0, -15],
+                className: 'icon'
+            });
+            return result;
+            
         };
+        
+        
 
 
        /* //Buckets variables
