@@ -25,10 +25,10 @@
 			width: 80%;
 			margin: 20px auto;
 		}
-/* Notice that your header h1 element is not responsive to the page size and it is pushed over to the right as the page gets larger? */
+
 		h1 {
-			width: 960px;/* Make this fit element parent's size. */
-			margin: 20px auto; /* This puts a 20px margin around the 960px box that contains the header text. */
+			width: 100%;
+			margin: 20px auto;
 			font-family: 'Arvo', serif;
 			letter-spacing: .04em;
             font-size: 2em;
@@ -105,14 +105,6 @@
 
 		// create a Leaflet map in our division container with id of 'map'
 		var map = L.map('map', options);
-
-		// request some basemap tiles and add to the map
-        /*----Old map tiles-----
-		var tiles = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-			subdomains: 'abcd',
-			maxZoom: 19
-		}).addTo(map);*/
 
         //New Map Tiles
         var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
@@ -201,37 +193,6 @@
             
         };
         
-        
-
-				//Good job converting static variables to looping array! So, after you're successful you can deep-six the old comments. They are in the commit record, if you need them again.
-
-
-       /* //Buckets variables
-        var location1Name = "Buckets";
-        var location1Lat = 45.8148;
-        var location1Lon = -122.7461;
-        var location1Details = "Buckets is a restaurant started by my cousin Dawn's husband, Stuart, after he got sick of grading papers as a high school English teacher. The concept of the restaurant is that everything they serve - soup, salad, barbeque - can be served in a bucket-shaped container.<br><img src='graphics/buckets.jpg' width='100%'>";
-
-        //Abrams Park variables
-        var location2Name = "Abrams Park";
-        var location2Lat = 45.8177;
-        var location2Lon = -122.7365;
-        var location2Details = "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.<br><img src='graphics/abrams-park.jpg' width='100%'>";
-
-        //Buckets popup
-        var location1Popup = "<b>" + location1Name + "</b><br>" +
-        "<b>Details</b>: " + location1Details;
-
-        L.marker([location1Lat, location1Lon]).addTo(map)
-        .bindPopup(location1Popup);
-
-        //Abrams Park popup
-        var location2Popup = "<b>" + location2Name + "</b><br>" +
-        "<b>Details</b>: " + location2Details;
-
-        L.marker([location2Lat, location2Lon]).addTo(map)
-        .bindPopup(location2Popup);*/
-
 	</script>
 
 </body>
