@@ -25,10 +25,10 @@
 			width: 80%;
 			margin: 20px auto;
 		}
-
+/* Notice that your header h1 element is not responsive to the page size and it is pushed over to the right as the page gets larger? */
 		h1 {
-			width: 960px;
-			margin: 20px auto;
+			width: 960px;/* Make this fit element parent's size. */
+			margin: 20px auto; /* This puts a 20px margin around the 960px box that contains the header text. */
 			font-family: 'Arvo', serif;
 			letter-spacing: .04em;
             font-size: 2em;
@@ -131,7 +131,7 @@
 			.bindTooltip(message)
 			.addTo(map)
 			.openTooltip();
-        
+
         //variable to store location names
         var nameLocation = [
             "Buckets", 
@@ -147,22 +147,22 @@
             "icons/restaurant-15.svg",
             "icons/park-15.svg"
         ];
-        
-        
+       
         //2-D variable to store lat and long
         var coordinateLocation = [
             [45.8148,-122.7461],
             [45.8177,-122.7365]
         ];
-        
+
         //variable to store location details
         var detailsLocation = ["Buckets is a restaurant started by my cousin Dawn's husband, Stuart, after he got sick of grading papers as a high school English teacher. The concept of the restaurant is that everything they serve - soup, salad, barbeque - can be served in a bucket-shaped container.<br><img src='graphics/buckets.jpg' width='100%'>", "Abrams Park is a green, tree-filled area in downtown Ridgefield. It has plenty of room for Little League Baseball and recreational soccer. If you have dogs, they may enjoy frolicking in the rapids of Gee Creek, which runs through the park. The park has a well-stocked concession stand that sells Sour Punch Straws and Big League Chew.<br><img src='graphics/abrams-park.jpg' width='100%'>"];
-        
-        
+
+
         // For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {
             var locationPopup = "<b>" + nameLocation[i] + "</b><br>" +
             "<b>Details</b>: " + detailsLocation[i];
+
             
             //create icon variable
             var iconLocation = createIcon(typeLocation[i]);
@@ -203,6 +203,8 @@
         
         
 
+				//Good job converting static variables to looping array! So, after you're successful you can deep-six the old comments. They are in the commit record, if you need them again.
+
 
        /* //Buckets variables
         var location1Name = "Buckets";
@@ -229,7 +231,7 @@
 
         L.marker([location2Lat, location2Lon]).addTo(map)
         .bindPopup(location2Popup);*/
-        
+
 	</script>
 
 </body>
