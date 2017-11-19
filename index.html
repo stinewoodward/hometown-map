@@ -72,8 +72,6 @@
 </head>
 
 <body>
-<!--add section elements to h1 and div-->
-
     <section>
 	   <h1>Ridgefield, Washington: Home of the Spudders</h1>
     </section>
@@ -100,7 +98,7 @@
 		// map options
 		var options = {
 			center: [45.8151, -122.7426], // lat/lon values
-			zoom: 13
+			zoom: 14
 		}
 
 		// create a Leaflet map in our division container with id of 'map'
@@ -115,17 +113,17 @@
 	           ext: 'png'
         }).addTo(map);
 
-		// write a custom message for the Leaflet tooltip
+		/*// write a custom message for the Leaflet tooltip
 		var message = 'Ridgefield is Cool!';
 
 		// add a marker to the center of the map and open the tooltip
 		L.marker(map.getCenter())
 			.bindTooltip(message)
 			.addTo(map)
-			.openTooltip();
+			.openTooltip();*/
 
         //create js objects
-        var myLocations [{
+        var myLocations = [{
             name: "Buckets",
             properties: {
                 coordinates: [45.8148,-122.7461],
@@ -213,25 +211,37 @@
                     icon: 'svgs/school-15.svg'
                 }
             }];
+        
+        for(var i = 0; i < myLocations.length; i++) {
+            //variable to make getting into object properties easier
+            var props = myLocations[i].properties;
 
-        //variable to reference 0 index in object
-        var i = 0;
+            //create popup
+            var popup = "<h3>" + myLocations[i].name + "</h3>" +
+                "<p><b>Details: </b>" + props.details + "</p>" +
+                "<p><b>Website:</b> <a href='" + props.url + "'>" + props.url + "</a></p>" +
+                "<p><b>Phone:</b> " + props.phone + "</p>";
+            
+           var icon = L.icon({
+                iconUrl: props.icon,
+                iconSize: [40, 40],
+                popupAnchor: [0, -22],
+                className: 'icon'
+            });
         
-        //create popup
-        var popup = "<b>" + myLocations[i].name + "</b><br>" +
-            "<b>Details</b>: " + myLocations[i].properties.details;
+            //create marker and bind popup
+            var marker = L.marker(props.coordinates, {
+                icon: icon
+            }).addTo(map).bindPopup(popup);
         
-        //create marker and bind popup
-        var marker = L.marker(myLocations[i].properties.coordinates, {
-            //icon: icon
-        }).addTo(map).bindPopup(popup);
-        
-        marker.on('mouseover', function(){
-        this.openPopup();
-        });
-        marker.on('mouseout', function(){
-        this.closePopup();
-        });
+            marker.on('mouseover', function(){
+            this.openPopup();
+            });
+            marker.on('mouseout', function(){
+            this.closePopup();
+            });
+            
+        };
         
         /*// For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {
@@ -250,9 +260,10 @@
         };*/
 
         /******* Functions below here *******/
+        
 
         //function to assign icons
-        function createIcon(typeFacility) {
+  /*      function createIcon(typeFacility) {
             var iconURL = "",
                 iconSize = 30;
 
@@ -273,7 +284,7 @@
             return result;
 
         };
-
+*/
 	</script>
 
 </body>
