@@ -126,20 +126,22 @@
 
         //variable to store location names
         var nameLocation = [
-            "Buckets", 
+            "Buckets",
             "Abrams Park"
         ];
-        
+
         var typeLocation = [
             "Restaurant",
             "Park"
         ];
-        
+
         var typeIconURL = [
             "svgs/icons/restaurant-15.svg",
-            "svgs/icons/park-15.svg"
+					// Give correct URLs to icons
+            "svgs/mapbox-maki-e067fc0/icons/restaurant-15.svg",
+            "svgs/mapbox-maki-e067fc0/icons/park-15.svg"
         ];
-       
+
         //2-D variable to store lat and long
         var coordinateLocation = [
             [45.8148,-122.7461],
@@ -155,44 +157,43 @@
             var locationPopup = "<b>" + nameLocation[i] + "</b><br>" +
             "<b>Details</b>: " + detailsLocation[i];
 
-            
             //create icon variable
             var iconLocation = createIcon(typeLocation[i]);
-            
+
             //create marker, add to map, bind popups
             L.marker(coordinateLocation[i], {
                 icon: iconLocation
-            }) 
+            })
             .addTo(map)
             .bindPopup(locationPopup);
         };
-        
+
         /******* Functions below here *******/
-        
+
         //i'm getting an error message for this function: iconURL not set in icon options. I'm not sure where this error is, unfortunately.
         //function to assign icons
         function createIcon(typeFacility) {
-            
-            var iconURL,
+            var iconURL = "",
                 iconSize = 30;
-            
+
             if (typeFacility == "Restaurant") {
                 iconURL = typeIconURL[0];
             } else {
                 iconURL = typeIconURL[1];
             }
-            
+
+						console.log(iconURL)
+
             //create leaflet icon object
             var result = L.icon({
-                iconURL: iconURL,
+                iconUrl: iconURL, // iconUrl vs iconURL ... I KNOW!!!
                 iconSize: iconSize,
-                popupAnchor: [0, -15],
-                className: 'icon'
+                popupAnchor: [0, -15]
             });
             return result;
-            
+
         };
-        
+
 	</script>
 
 </body>
