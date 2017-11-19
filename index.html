@@ -136,7 +136,6 @@
         ];
 
         var typeIconURL = [
-					// Give correct URLs to icons
             "svgs/mapbox-maki-e067fc0/icons/restaurant-15.svg",
             "svgs/mapbox-maki-e067fc0/icons/park-15.svg"
         ];
@@ -169,7 +168,6 @@
 
         /******* Functions below here *******/
 
-        //i'm getting an error message for this function: iconURL not set in icon options. I'm not sure where this error is, unfortunately.
         //function to assign icons
         function createIcon(typeFacility) {
             var iconURL = "",
@@ -181,11 +179,11 @@
                 iconURL = typeIconURL[1];
             }
 
-						console.log(iconURL)
+						console.log(iconURL);
 
             //create leaflet icon object
             var result = L.icon({
-                iconUrl: iconURL, // iconUrl vs iconURL ... I KNOW!!!
+                iconURl: iconURL,
                 iconSize: iconSize,
                 popupAnchor: [0, -15]
             });
