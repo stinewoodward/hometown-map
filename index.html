@@ -201,35 +201,38 @@
                     icon: 'svgs/school-15.svg'
                 }
             }];
-        
+
         for(var i = 0; i < myLocations.length; i++) {
             //variable to make getting into object properties easier
             var props = myLocations[i].properties;
+
+						// Nice form here by reducing the clutter of long names. Easy on the eyes!
 
             //create popup
             var popup = "<h3>" + myLocations[i].name + "</h3>" +
                 "<p>" + props.details + "</p>" +
                 "<p><b>Website:</b> <a href='" + props.url + "'>" + props.url + "</a></p>" +
                 "<p><b>Phone:</b> " + props.phone + "</p>";
-            
+
            var icon = L.icon({
                 iconUrl: props.icon,
+						
                 iconSize: [30, 30],
                 popupAnchor: [0, 0],
                 className: 'icon'
             });
-        
+
             //create marker and bind popup
             var marker = L.marker(props.coordinates, {
                 icon: icon
             }).addTo(map).bindPopup(popup);
-        
+
             marker.on('mouseover', function(){
                 this.openPopup();
             });
-            
+
         };
-        
+
         /*// For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {
             var locationPopup = "<b>" + nameLocation[i] + "</b><br>" +
@@ -247,7 +250,7 @@
         };*/
 
         /******* Functions below here *******/
-        
+
 
         //function to assign icons
   /*      function createIcon(typeFacility) {
