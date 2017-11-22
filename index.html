@@ -230,6 +230,10 @@
                 this.openPopup();
             });
 
+						marker.on('mouseout', function(){ // control for mouseout
+                this.closePopup();
+            });
+
         };
 
         /*// For loop to create popup and bind to marker
