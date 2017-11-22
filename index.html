@@ -215,8 +215,7 @@
                 "<p><b>Phone:</b> " + props.phone + "</p>";
 
            var icon = L.icon({
-                iconUrl: props.icon,
-						
+                iconUrl: props.icon, // This is good, but appreciate that if you have hundreds of locations you'll have hundreds of relative directory pathnames for icon URLs. What's the solution if you move the svgs folder?
                 iconSize: [30, 30],
                 popupAnchor: [0, 0],
                 className: 'icon'
