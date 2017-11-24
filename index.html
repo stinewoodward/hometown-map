@@ -206,8 +206,6 @@
             //variable to make getting into object properties easier
             var props = myLocations[i].properties;
 
-						// Nice form here by reducing the clutter of long names. Easy on the eyes!
-
             //create popup
             var popup = "<h3>" + myLocations[i].name + "</h3>" +
                 "<p>" + props.details + "</p>" +
@@ -215,7 +213,7 @@
                 "<p><b>Phone:</b> " + props.phone + "</p>";
 
            var icon = L.icon({
-                iconUrl: props.icon, // This is good, but appreciate that if you have hundreds of locations you'll have hundreds of relative directory pathnames for icon URLs. What's the solution if you move the svgs folder?
+                iconUrl: props.icon, // This is good, but appreciate that if you have hundreds of locations you'll have hundreds of relative directory pathnames for icon URLs. What's the solution if you move the svgs folder? --- CW: I need to talk to you about this. Maybe I know the answer, but I don't understand the question.
                 iconSize: [30, 30],
                 popupAnchor: [0, 0],
                 className: 'icon'
@@ -229,8 +227,9 @@
             marker.on('mouseover', function(){
                 this.openPopup();
             });
-
-						marker.on('mouseout', function(){ // control for mouseout
+                //I had the mouseout function in originally, but I took it out because you can't
+                //click on the popup links when it's in place. Do you want me to keep it anyway?
+				marker.on('mouseout', function(){
                 this.closePopup();
             });
 
