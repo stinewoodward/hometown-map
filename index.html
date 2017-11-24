@@ -92,6 +92,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet-src.js"></script>
+    <script src="data/route.js"></script>
 	<script>
 
 		// map options
@@ -180,6 +181,17 @@
                 }
             },
             {
+                name: "Ridgefield Kayak Launch",
+                properties: {
+                    coordinates: [45.8188, -122.7513],
+                    type: "Park",
+                    details: "Come to this point with your friends to start a kayak adventure on Lake River! You can follow it all the way down to Vancouver Lake, if you want.<br><br><img src='graphics/kayak-launch.jpg' width='100%'>",
+                    url: 'http://www.ridgewa.com/boat_launch.htm',
+                    phone: 'N/A',
+                    icon: 'svgs/park-15.svg'
+                }
+            },
+            {
                 name: "View Ridge Middle School",
                 properties: {
                     coordinates: [45.8160, -122.7419],
@@ -234,6 +246,29 @@
             });
 
         };
+
+        
+        //I wasn't sure what route to use, since I have neither lived nor worked in downtown Ridgefield (where my points are). I picked a route between a Kayak launch and a restaurant. But the map tiles I'm using don't allow enough zoom to see everything properly. I might have to switch.
+        var myRoute = L.geoJson(routeData, {
+
+        filter : function(feature) {
+            if(feature.geometry.type == "LineString") {
+                return feature;
+            }
+         },
+        style : function(feature) {
+
+            return {
+                color: "#005DAA",
+                weight: 4,
+                opacity: .6,
+                dashArray: "5, 5"
+                }
+        }
+
+        }).addTo(map);
+
+        map.fitBounds(myRoute.getBounds());
 
         /*// For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {

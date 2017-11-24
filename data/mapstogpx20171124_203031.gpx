@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" creator="mapstogpx.com" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+  <metadata>
+    <link href="http://www.mapstogpx.com">
+      <text>Sverrir Sigmundarson</text>
+    </link>
+    <!--desc>Map data ©2017 Google</desc-->
+    <!--copyright author="Google Inc">
+    	<year>2017</year>
+    	<license>https://developers.google.com/maps/terms</license>
+    </copyright-->
+    <!--url>https://www.google.co.uk/maps/dir/Ridgefield Kayak Launch, Division St, Ridgefield, WA 98642/El Rancho Viejo, South 3rd Avenue, Ridgefield, WA/@45.8174568,-122.7524691,16z/am=t/data=!4m15!4m14!1m5!1m1!1s0x54944d8b14726a27:0x33a124ffe0b0ce14!2m2!1d-122.751318!2d45.8188355!1m5!1m1!1s0x54944d8eca07888f:0xaad55ca03fb0c870!2m2!1d-122.7448654!2d45.8160733!3e2!5i1?hl=en&hl=en</url-->
+    <time>2017-11-24T15:30:30Z</time>
+  </metadata>
+  <wpt lat="45.8188355" lon="-122.751318">
+    <name>Ridgefield Kayak Launch</name>
+    <desc>Ridgefield Kayak Launch, Division St, Ridgefield, WA 98642, USA</desc>
+  </wpt>
+  <wpt lat="45.8160733" lon="-122.7448654">
+    <name>El Rancho Viejo</name>
+    <desc>El Rancho Viejo, 122 S 3rd Ave, Ridgefield, WA 98642, USA</desc>
+  </wpt>
+<trk>
+  <name>Ridgefield Kayak Launch to El Rancho Viejo</name>
+  <number>1</number>
+  <trkseg>
+  <trkpt lat="45.8188657" lon="-122.7513186">
+    <name>TP001</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74945">
+    <name>TP002</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74908">
+    <name>TP003</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74881">
+    <name>TP004</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74875">
+    <name>TP005</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74869">
+    <name>TP006</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74842">
+    <name>TP007</name>
+  </trkpt>
+  <trkpt lat="45.81886" lon="-122.74819">
+    <name>TP008</name>
+  </trkpt>
+  <trkpt lat="45.81887" lon="-122.74719">
+    <name>TP009</name>
+  </trkpt>
+  <trkpt lat="45.81888" lon="-122.74618">
+    <name>TP010</name>
+  </trkpt>
+  <trkpt lat="45.818876" lon="-122.7461773">
+    <name>TP011</name>
+  </trkpt>
+  <trkpt lat="45.81812" lon="-122.74617">
+    <name>TP012</name>
+  </trkpt>
+  <trkpt lat="45.81714" lon="-122.74615">
+    <name>TP013</name>
+  </trkpt>
+  <trkpt lat="45.8168" lon="-122.74615">
+    <name>TP014</name>
+  </trkpt>
+  <trkpt lat="45.81657" lon="-122.74614">
+    <name>TP015</name>
+  </trkpt>
+  <trkpt lat="45.8165657" lon="-122.7461404">
+    <name>TP016</name>
+  </trkpt>
+  <trkpt lat="45.81657" lon="-122.7456">
+    <name>TP017</name>
+  </trkpt>
+  <trkpt lat="45.81658" lon="-122.74506">
+    <name>TP018</name>
+  </trkpt>
+  <trkpt lat="45.8165781" lon="-122.7450637">
+    <name>TP019</name>
+  </trkpt>
+  <trkpt lat="45.8164" lon="-122.74506">
+    <name>TP020</name>
+  </trkpt>
+  <trkpt lat="45.81607" lon="-122.74506">
+    <name>TP021</name>
+  </trkpt>
+  <trkpt lat="45.816072" lon="-122.7450578">
+    <name>TP022</name>
+  </trkpt>
+  </trkseg>
+</trk>
+</gpx>
