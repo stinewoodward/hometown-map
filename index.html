@@ -247,7 +247,7 @@
 
         };
 
-        
+
         //I wasn't sure what route to use, since I have neither lived nor worked in downtown Ridgefield (where my points are). I picked a route between a Kayak launch and a restaurant. But the map tiles I'm using don't allow enough zoom to see everything properly.
         var myRoute = L.geoJson(routeData, {
 
@@ -268,7 +268,7 @@
 
         }).addTo(map);
 
-        map.fitBounds(myRoute.getBounds());
+        map.fitBounds(myRoute.getBounds()); // fitBounds here zooms more than your tile service can afford. Maybe select a different tile server?
 
         /*// For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {
