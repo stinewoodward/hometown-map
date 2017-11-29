@@ -226,7 +226,7 @@
 
            var icon = L.icon({
                 iconUrl: props.icon, // This is good, but appreciate that if you have hundreds of locations you'll have hundreds of relative directory pathnames for icon URLs. What's the solution if you move the svgs folder? --- CW: I need to talk to you about this. Maybe I know the answer, but I don't understand the question.
-                iconSize: [30, 30],
+                iconSize: [30, 30], // Icon size in pixels
                 popupAnchor: [0, 0],
                 className: 'icon'
             });
@@ -236,14 +236,35 @@
                 icon: icon
             }).addTo(map).bindPopup(popup);
 
-            marker.on('mouseover', function(){
-                this.openPopup();
-            });
-                //I had the mouseout function in originally, but I took it out because you can't
-                //click on the popup links when it's in place. Do you want me to keep it anyway?
-				marker.on('mouseout', function(){
-                this.closePopup();
-            });
+						// Mouseover events don't work on touch screens so you should (IMHO) afford for the click/tap.
+						// Plus, since you have detailed popups, your map moves to accommodate the size of the popup on mouseover.
+
+						// Let's try making the marker increase in size on mouseover, like a zoom in.
+						// In the next few modules we'll find that it's much easier to do on vector layers with Path options.
+
+
+									marker.on('mouseover', function() {
+
+										console.log(this) // Look at the properties of the Leaflet's Icon class in the DOM for this moused-over icon.
+										console.log(this._icon.style) // Inspect the style properties for this marker (the _icon is part of the class and is not dependent on your name for the var icon)
+
+								// Find the style you want to change and assign the values.
+										this._icon.style.height = "50px"
+										this._icon.style.width = "50px"
+
+									});
+									//I had the mouseout function in originally, but I took it out because you can't
+									//click on the popup links when it's in place. Do you want me to keep it anyway?
+
+
+									marker.on('mouseout', function(e) {
+
+										// Return to normal on mouseout. Note this notion serves the same result; e.target and this refer the same marker.
+
+										e.target._icon.style.height = "30px"
+										e.target._icon.style.width = "30px"
+
+									});
 
         };
 
