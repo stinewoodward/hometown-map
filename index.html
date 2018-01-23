@@ -98,19 +98,16 @@
 		// map options
 		var options = {
 			center: [45.8151, -122.7426], // lat/lon values
-			zoom: 14
+			zoom: 16
 		}
 
 		// create a Leaflet map in our division container with id of 'map'
 		var map = L.map('map', options);
 
         //New Map Tiles
-        var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
-	           attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-	           subdomains: 'abcd',
-	           minZoom: 0,
-	           maxZoom: 18,
-	           ext: 'png'
+        var OpenStreetMap_France = L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            attribution: '&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
         //create js object
@@ -225,8 +222,8 @@
                 "<p><b>Phone:</b> " + props.phone + "</p>";
 
            var icon = L.icon({
-                iconUrl: props.icon, // This is good, but appreciate that if you have hundreds of locations you'll have hundreds of relative directory pathnames for icon URLs. What's the solution if you move the svgs folder? --- CW: I need to talk to you about this. Maybe I know the answer, but I don't understand the question.
-                iconSize: [30, 30], // Icon size in pixels
+                iconUrl: props.icon,
+                iconSize: [30, 30],
                 popupAnchor: [0, 0],
                 className: 'icon'
             });
@@ -269,8 +266,8 @@
         };
 
 
-        //I wasn't sure what route to use, since I have neither lived nor worked in downtown Ridgefield (where my points are). I picked a route between a Kayak launch and a restaurant. But the map tiles I'm using don't allow enough zoom to see everything properly.
-        var myRoute = L.geoJson(routeData, {
+    
+        /*var myRoute = L.geoJson(routeData, {
 
         filter : function(feature) {
             if(feature.geometry.type == "LineString") {
@@ -289,7 +286,7 @@
 
         }).addTo(map);
 
-        map.fitBounds(myRoute.getBounds()); // fitBounds here zooms more than your tile service can afford. Maybe select a different tile server?
+        map.fitBounds(myRoute.getBounds());*/
 
         /*// For loop to create popup and bind to marker
         for (var i = 0; i < nameLocation.length; i++) {
